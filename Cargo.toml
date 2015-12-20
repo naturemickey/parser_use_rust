@@ -1,5 +1,5 @@
 [package]
-name = "parser_use"
+name = "parser_use_rust"
 version = "0.1.0"
 authors = ["zhouyou <mickey_zhouyou@yeah.net>"]
 
