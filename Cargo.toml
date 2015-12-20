@@ -1,0 +1,7 @@
+[package]
+name = "parser_use"
+version = "0.1.0"
+authors = ["zhouyou <mickey_zhouyou@yeah.net>"]
+
+[dependencies.rust_s_exp]
+git="https://github.com/naturemickey/rustSexp.git"
