@@ -5,3 +5,7 @@ fn it_works() {
     // (@... "/*" (@* (@! "*/")) "*/")
     assert!(true);
 }
+#[test]
+fn test_and() {
+    let s = "(lex abc (@... 'a' 'b'))";
+}
