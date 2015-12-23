@@ -2,6 +2,12 @@ extern crate parser_use_rust;
 
 use parser_use_rust::Token;
 
+//!
+//! (lex 词法名 词法类型 匹配序列)
+//!
+//!
+//!
+
 #[test]
 fn it_works() {
     // (@... "/*" (@* (@! "*/")) "*/")
@@ -9,5 +15,5 @@ fn it_works() {
 }
 #[test]
 fn test_and() {
-    let s = "(lex ab (@... 'a' 'b'))";
+    let lex_str = "(lex ab 1 (@... 'a' 'b'))";
 }
