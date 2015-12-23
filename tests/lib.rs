@@ -3,7 +3,7 @@ extern crate parser_use_rust;
 use parser_use_rust::Token;
 
 //!
-//! (lex 词法名 词法类型 匹配序列)
+//! (lex 词法名 匹配模式)
 //!
 //!
 //!
