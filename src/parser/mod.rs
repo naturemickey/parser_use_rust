@@ -22,18 +22,15 @@ pub fn parse_lex(lex:&str, s:&str) -> Token {
 
 fn _parse_lex(lex:&Vec<SNode>, s:&str) -> Token {
     // lex_name --> lex_define
-    let lexMap = HashMap::new();
+    let mut lexMap = HashMap::new();
     for snode in lex {
-        if snode.is_leaf() {
-            panic!("lex define error");
-        } else {
-            
-        }
+        let (name, n) = get_one_lex_define(snode);
+        lexMap.insert(name, n);
     }
     Token{_type:"".to_string(), _name:"".to_string(), _line:0, _column:0}
 }
 
-fn get_one_lex_define(lex:&SNode) -> (String, SNode) {
+fn get_one_lex_define<'a>(lex:&'a SNode) -> (String, &'a SNode) {
     if lex.is_leaf() || lex.children.len() != 3 {
         panic!("lex define error");
     } else { unsafe {
@@ -42,7 +39,7 @@ fn get_one_lex_define(lex:&SNode) -> (String, SNode) {
         let n2 = lex.children.get_unchecked(2);
         if n0.is_leaf() && n0._type == 0 && n0.token == "lex" {
             if n1.is_leaf() && n1._type == 1 {
-                let lex_name = n1.token;
+                let lex_name = n1.token.to_string();
                 if n2.is_leaf() {
                     panic!("lex define error");
                 }
