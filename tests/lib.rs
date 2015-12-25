@@ -15,5 +15,5 @@ fn it_works() {
 }
 #[test]
 fn test_and() {
-    let lex_str = "(lex ab 1 (@... 'a' 'b'))";
+    let lex_str = "(lex ab (@... 'a' 'b'))";
 }
