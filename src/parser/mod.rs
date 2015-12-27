@@ -23,9 +23,14 @@ pub fn parse_lex(lex:&str, s:&str) -> Token {
 fn _parse_lex(lex:&Vec<SNode>, s:&str) -> Token {
     // lex_name --> lex_define
     let mut lexMap = HashMap::new();
+    let mut name_vec = Vec::new();
     for snode in lex {
         let (name, n) = get_one_lex_define(snode);
+        name_vec.push(name.to_string());
         lexMap.insert(name, n);
+    }
+    for lex_name in name_vec {
+        
     }
     Token{_type:"".to_string(), _name:"".to_string(), _line:0, _column:0}
 }
